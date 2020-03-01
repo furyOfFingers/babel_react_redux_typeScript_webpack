@@ -1,8 +1,9 @@
 import React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-import { changeFirstName, changeSecondName } from '../../store/actions';
-import { IFieldState } from '../../Types/Types';
+import { changeFirstName, changeSecondName } from '../store/actions';
+import { IFieldState } from '../Types/Types';
+import '../styles/index.css';
 
 class App extends React.Component {
   render() {
@@ -14,8 +15,10 @@ class App extends React.Component {
     } = this.props;
 
     return (
-      <div className='App'>
-        <div>
+      <>
+        <h1> Insert Name</h1>
+
+        <div className='app'>
           <input
             value={firstName}
             type='text'
@@ -24,9 +27,7 @@ class App extends React.Component {
               changeFirstName(event.target.value);
             }}
           />
-        </div>
 
-        <div>
           <input
             value={secondName}
             type='text'
@@ -35,10 +36,10 @@ class App extends React.Component {
               changeSecondName(event.target.value);
             }}
           />
-        </div>
 
-        <div>{`${firstName} ${secondName}`}</div>
-      </div>
+          <div>{`${firstName} ${secondName}`}</div>
+        </div>
+      </>
     );
   }
 }

@@ -1,4 +1,10 @@
 h1 {
-  color: #d81d1d;
+  color: #533232;
   text-align: center;
+}
+
+.app {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
